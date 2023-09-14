@@ -5,6 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+		  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8988637729605842"
+     crossorigin="anonymous"></script>
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -23,10 +25,13 @@ class MyDocument extends Document {
             href="/favicon/favicon-16x16.png"
           />
           <link rel="manifest" href="/favicon/site.webmanifest" />
+		  
         </Head>
+		
         <body>
           <Main />
           <NextScript />
+		
         </body>
       </Html>
     );

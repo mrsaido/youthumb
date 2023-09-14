@@ -1,7 +1,6 @@
-import { useState } from "react";
-import copy from "copy-to-clipboard";
+import React, { useEffect, useState } from 'react';
 
-const Index = () => {
+function HomePage() {
   const [videoURL, setVideoURL] = useState("");
   const [thumbnailOptions, setThumbnailOptions] = useState([]);
 
@@ -33,6 +32,17 @@ const Index = () => {
     }
   };
 
+  const copy = (url) => {
+    // Function to copy the image URL to the clipboard
+    const textArea = document.createElement("textarea");
+    textArea.value = url;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    alert("Image URL copied to clipboard!");
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <header className="text-center mb-8">
@@ -57,6 +67,8 @@ const Index = () => {
         >
           Download Thumbnails
         </button>
+		
+		
       </div>
       {thumbnailOptions.length > 0 && (
         <div className="mt-8">
@@ -76,8 +88,18 @@ const Index = () => {
           </div>
         </div>
       )}
+      {/* AdSense Ad */}
+      <div className="text-center mt-8">
+        <amp-ad
+          width="300"
+          height="250"
+          type="adsense"
+          data-ad-client="ca-pub-8988637729605842"
+          data-ad-slot="1890691462"
+        ></amp-ad>
+      </div>
     </div>
   );
-};
+}
 
-export default Index;
+export default HomePage;
